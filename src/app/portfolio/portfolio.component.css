@@ -1,0 +1,13 @@
+.main_content{
+    margin-top: 60px;
+    height: fit-content;
+}
+
+.loading_view{
+    top: 50%;
+    left: 50%;
+    bottom: 50%;
+    right: 50%;
+
+    margin-top: 200px;
+}

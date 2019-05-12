@@ -1,0 +1,16 @@
+.content_container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #212121;
+  }
+  .side_nav{
+    background: black;
+    overflow: hidden;
+  }
+
+  .content_main{
+    background: #212121;
+ }

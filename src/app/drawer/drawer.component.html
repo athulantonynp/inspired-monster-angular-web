@@ -1,0 +1,27 @@
+<div class="sidebar_body" fxLayout="column" fxLayoutAlign="space-between none" >
+<mat-icon fxLayoutAlign="flex-end" class="icon_close"
+(click)="onSlideNavigationCloseClick($event)">close</mat-icon>
+
+<ul fxFill fxFlex="grow" class="drawer_menu_items">
+    <li >
+        <button (click)="onNavigationItemClick('home')" 
+        mat-button color="primary" class="menu_item">Home</button>
+    </li>
+
+    <li >
+        <button (click)="onNavigationItemClick('about')"
+         mat-button color="primary" class="menu_item" >About Me</button>
+    </li>
+
+    <li >
+        <button (click)="onNavigationItemClick('portfolio')"
+         mat-button color="primary" class="menu_item">Portfolio</button>
+    </li>
+
+    <li >
+        <button  (click)="onNavigationItemClick('contact')"
+        mat-button color="primary" class="menu_item">Contact</button>
+    </li>
+</ul>
+
+</div>

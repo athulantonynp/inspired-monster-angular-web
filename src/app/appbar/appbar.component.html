@@ -1,0 +1,20 @@
+<div class="toolbar_main">
+  <mat-toolbar color="primary" class="mat-elevation-z4">
+  
+    <mat-toolbar-row>
+      
+      <div fxFlex fxLayout fxLayoutAlign="flex-start center" fxLayoutGap="8px">
+       
+          <img src="../../assets/images/im_main_logo.svg"/>
+      </div>
+  
+      <div fxFlex fxLayout fxLayoutAlign="flex-end">
+        <div fxLayoutAlign="center" matRipple matRippleColor="primary" [matRippleUnbounded]=true [matRippleCentered]=true>
+          <img src="../../assets/images/hamburger menu.svg" (click)="onSlideNavigationClick($event)" class="overflow"/>
+          </div>
+        
+      </div>
+    </mat-toolbar-row>
+  
+  </mat-toolbar>
+</div>

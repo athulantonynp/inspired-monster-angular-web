@@ -1,0 +1,33 @@
+.sidebar_body{
+    width: 250px;
+    height: 100%;
+}
+
+.icon_close{
+    margin: 16px;
+}
+
+.drawer_menu_items{
+    position: absolute;
+    top: 20%;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+.mat-button-focus-overlay {
+    background-color: transparent!important;
+}
+
+button:focus {
+    outline: none;
+}
+
+.menu_item{
+    width: 100%;
+    border-radius: 16px;
+    margin: 10px 0;
+    color: white;
+}
