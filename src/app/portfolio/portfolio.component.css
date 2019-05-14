@@ -8,6 +8,8 @@
     left: 50%;
     bottom: 50%;
     right: 50%;
-
-    margin-top: 200px;
+    height: calc(100vh - 60px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
