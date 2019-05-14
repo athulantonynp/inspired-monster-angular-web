@@ -1,9 +1,9 @@
 <div class="main_content" >
-  <div class="loading_view">
+  <div *ngIf="isMainLoading" class="loading_view">
       <lottie-animation-view 
       [options]="lottieConfig"
-      [width]="250"
-      [height]="250">
+      [width]="210"
+      [height]="210">
     </lottie-animation-view>
   </div>
  

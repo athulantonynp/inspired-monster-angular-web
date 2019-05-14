@@ -20,6 +20,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { LottieAnimationViewModule } from 'lottie-angular2';
 
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -42,7 +44,8 @@ import { LottieAnimationViewModule } from 'lottie-angular2';
     MatButtonModule,
     MatChipsModule,
     MatSnackBarModule,
-    LottieAnimationViewModule.forRoot()
+    LottieAnimationViewModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
