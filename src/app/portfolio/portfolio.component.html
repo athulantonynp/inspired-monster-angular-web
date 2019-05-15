@@ -6,5 +6,16 @@
       [height]="210">
     </lottie-animation-view>
   </div>
+
+  <div class="portfolio_layout">
+      <div class="portofolio_wrapper" *ngFor="let item of shots">
+          <ng-container *ngFor="let item of shots; let i = index">
+        <div class="shot_item">
+            <img src="{{item.images.hidpi}}" class="center-cropped"/>
+      </div>
+        </ng-container>
+      </div>
+  </div>
+  
  
 </div>

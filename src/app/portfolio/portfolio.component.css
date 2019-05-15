@@ -1,6 +1,6 @@
 .main_content{
     margin-top: 60px;
-    height: fit-content;
+    height: 100%;
 }
 
 .loading_view{
@@ -13,3 +13,27 @@
     align-items: center;
     justify-content: center;
 }
+
+.portofolio_wrapper{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding-left: 80px;
+    padding-right: 80px;
+    min-height: 0;  /* NEW */
+    min-width: 0;
+}
+
+.shot_item{
+   width: 200px;
+    height: 180px;
+    overflow: hidden;  /* NEW */
+    min-width: 0;  
+    text-align: center;
+}
+
+
+.center-cropped {
+    max-width:100%;
+    max-height:100%;
+    vertical-align: middle;
+  }
