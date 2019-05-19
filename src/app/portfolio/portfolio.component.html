@@ -7,14 +7,29 @@
     </lottie-animation-view>
   </div>
 
-  <div class="portfolio_layout">
-      <div class="portofolio_wrapper" *ngFor="let item of shots">
+  <div 
+  [ngClass.md]="'portfolio_layout'"
+    [ngClass.lg]="'portfolio_layout'"
+    [ngClass.xl]="'portfolio_layout'"
+    [ngClass.sm]="'portfolio_layout_small'"
+    [ngClass.xs]="'portfolio_layout_small'"
+     fxLayout='column' fxLayoutAlign='center'>
+      <mat-grid-list cols="2" rowHeight="2:1.5" class="portofolio_wrapper"
+      [gutterSize]="'8px'">
           <ng-container *ngFor="let item of shots; let i = index">
-        <div class="shot_item">
+        <mat-grid-tile class="shot_item">
             <img src="{{item.images.hidpi}}" class="center-cropped"/>
-      </div>
+      </mat-grid-tile>
         </ng-container>
-      </div>
+      </mat-grid-list>
+      <div *ngIf="isSubLoading" class="sub_loading_view">
+        <lottie-animation-view 
+        [options]="lottieConfig"
+        [width]="50"
+        [height]="50">
+      </lottie-animation-view>
+    </div>
+  
   </div>
   
  

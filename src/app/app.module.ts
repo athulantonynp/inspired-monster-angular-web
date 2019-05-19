@@ -21,7 +21,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { LottieAnimationViewModule } from 'lottie-angular2';
 
 import { HttpClientModule } from '@angular/common/http';
-
+import { MatGridListModule}from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -45,7 +45,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatChipsModule,
     MatSnackBarModule,
     LottieAnimationViewModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

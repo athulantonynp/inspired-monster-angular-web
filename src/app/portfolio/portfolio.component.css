@@ -15,17 +15,27 @@
 }
 
 .portofolio_wrapper{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    padding-left: 80px;
-    padding-right: 80px;
+
     min-height: 0;  /* NEW */
     min-width: 0;
+    
+}
+
+.portfolio_layout{
+    padding-left: 30% !important;
+    padding-right: 30% !important;
+    padding-bottom: 20px !important;
+    padding-top: 20px !important;
+}
+
+.portfolio_layout_small{
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    padding-bottom: 20px !important;
+    padding-top: 20px !important;
 }
 
 .shot_item{
-   width: 200px;
-    height: 180px;
     overflow: hidden;  /* NEW */
     min-width: 0;  
     text-align: center;
