@@ -39,6 +39,7 @@
     overflow: hidden;  /* NEW */
     min-width: 0;  
     text-align: center;
+    background: url('../../assets/images/shimmer.gif') no-repeat scroll 0 0;
 }
 
 

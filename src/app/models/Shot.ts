@@ -7,6 +7,7 @@ export interface Shot{
     title:string
 }
 
-export class ShotImage{
-    hidpi:string
+export interface ShotImage{
+    hidpi:string,
+    normal:string
 }
