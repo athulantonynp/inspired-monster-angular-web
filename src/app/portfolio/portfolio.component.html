@@ -8,13 +8,14 @@
   </div>
 
   <div 
-  [ngClass.md]="'portfolio_layout'"
-    [ngClass.lg]="'portfolio_layout'"
-    [ngClass.xl]="'portfolio_layout'"
+  [ngClass.md]="'portfolio_layout_xl'"
+    [ngClass.lg]="'portfolio_layout_xl'"
+    [ngClass.xl]="'portfolio_layout_xl'"
     [ngClass.sm]="'portfolio_layout_small'"
     [ngClass.xs]="'portfolio_layout_small'"
      fxLayout='column' fxLayoutAlign='center'>
-      <mat-grid-list cols="2" rowHeight="2:1.5" class="portofolio_wrapper"
+      <mat-grid-list  [cols]="columnsBreakpoint" rowHeight="2:1.5" class="portofolio_wrapper"
+      (window:resize)="onResize($event)"
       [gutterSize]="'8px'">
           <ng-container *ngFor="let item of shots; let i = index">
         <mat-grid-tile class="shot_item">

@@ -46,3 +46,4 @@ testem.log
 Thumbs.db
 
 /src/app/constants.ts
+.firebase/*

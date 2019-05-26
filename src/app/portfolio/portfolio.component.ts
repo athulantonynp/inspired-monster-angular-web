@@ -25,7 +25,7 @@ export class PortfolioComponent implements OnInit {
   shots:Shot[]=[]
   isSubLoading=false;
   isFinishLoading=false;
- 
+  columnsBreakpoint=2;
 
   constructor(private httpClient:HttpClient) {
     
@@ -40,6 +40,11 @@ export class PortfolioComponent implements OnInit {
 
   ngOnInit() {
     window.addEventListener('scroll', this.scroll, true);
+    this.columnsBreakpoint = (window.innerWidth <= 600) ? 2 : 6;
+  }
+
+  onResize(event) {
+    this.columnsBreakpoint = (event.target.innerWidth <= 600) ? 2 : 6;
   }
 
   disableClick(e:any){
@@ -72,6 +77,7 @@ export class PortfolioComponent implements OnInit {
           this.shots.push(res[i])
         }
         this.isSubLoading=false;
+        this.getUserShots();
       }else{
         this.isFinishLoading=true;
         this.isSubLoading=false;
