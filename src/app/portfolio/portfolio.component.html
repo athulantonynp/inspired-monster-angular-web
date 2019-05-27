@@ -1,4 +1,17 @@
 <div class="main_content" >
+
+    <div class="image-full-view-content" *ngIf="isFullscreen" (click)="onExitFullScreen()"
+    fxLayout='column' fxLayoutAlign='center center'>
+
+          <div class="shot_item_wrapper" >
+           <img src="{{fullScreenShot.images.hidpi}}"  class="shot_item_fullscreen"/>
+          </div>
+         
+          <!-- [width]="fullScreenWidth" [height]="fullScreenHeight" -->
+           <img src="../../assets/images/ic_close.svg" class="shot_item_close" (click)="onExitFullScreen()"/>
+        
+    </div>
+
   <div *ngIf="isMainLoading" class="loading_view">
       <lottie-animation-view 
       [options]="lottieConfig"
@@ -16,9 +29,9 @@
      fxLayout='column' fxLayoutAlign='center'>
       <mat-grid-list  [cols]="columnsBreakpoint" rowHeight="2:1.5" class="portofolio_wrapper"
       (window:resize)="onResize($event)"
-      [gutterSize]="'8px'">
+      [gutterSize]="'6px'" #matGridList>
           <ng-container *ngFor="let item of shots; let i = index">
-        <mat-grid-tile class="shot_item">
+        <mat-grid-tile class="shot_item" (click)="onShotClick(item,$event)">
             <img src="{{item.images.normal}}" class="center-cropped"/>
       </mat-grid-tile>
         </ng-container>
@@ -30,10 +43,12 @@
         [height]="50">
       </lottie-animation-view>
     </div>
-  
+ 
+
+
   </div>
   <!--footer-->
-  <div class="footer" fxLayout="row" fxLayoutAlign="center">
+  <div class="footer"  *ngIf="isFullscreen===false" fxLayout="row" fxLayoutAlign="center">
     <div class="footer_line"></div>
     <div class="footer_content" fxLayout="row" fxLayoutAlign="center">
       <p class="footer_text" fxLayoutAlign="center center">© 2019 Inspired Monster</p>
@@ -41,3 +56,5 @@
   </div>
   
 </div>
+
+

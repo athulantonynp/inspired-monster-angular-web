@@ -28,7 +28,8 @@
 
     
     <!--Floating action button-->
-    <mat-chip class="fab_contact" fxLayoutAlign="center center" [disableRipple]=true>
+    <mat-chip class="fab_contact" fxLayoutAlign="center center" [disableRipple]=true
+    (click)="onContactClicked()">
       <img class="img_talk_to_me" src="../../assets/images/im_short_fab.png">
       Talk to me
     </mat-chip>

@@ -12,4 +12,7 @@ export class ContentComponent implements OnInit {
   ngOnInit() {
   }
 
+  onContactClicked(){
+    document.location.href = 'https://api.whatsapp.com/send?phone=+919946701501';
+  }
 }

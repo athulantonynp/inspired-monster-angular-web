@@ -1,10 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import{Shot} from '../models/Shot';
 import {AppConstants} from '../constants';
-import {HostListener} from '@angular/core';
-import { fromEvent } from 'rxjs/internal/observable/fromEvent';
-import { map, filter, catchError, mergeMap } from 'rxjs/operators';
+
 
 
 
@@ -20,12 +18,18 @@ export class PortfolioComponent implements OnInit {
 
   public lottieConfig: Object;
   isMainLoading=true;
-  STATIC_PAGE_NUM=0;
-  MAIN_URL="https://api.dribbble.com/v2/user/shots?access_token="+AppConstants.ACCESS_TOKEN
+
+
   shots:Shot[]=[]
   isSubLoading=false;
   isFinishLoading=false;
   columnsBreakpoint=2;
+  isFullscreen=false;
+  fullScreenShot:Shot;
+
+  fullScreenWidth=0;
+  fullScreenHeight=0;
+
 
   constructor(private httpClient:HttpClient) {
     
@@ -40,51 +44,42 @@ export class PortfolioComponent implements OnInit {
 
   ngOnInit() {
     window.addEventListener('scroll', this.scroll, true);
-    this.columnsBreakpoint = (window.innerWidth <= 600) ? 2 : 6;
+    this.columnsBreakpoint = (window.innerWidth <= 600) ? 2 :3;
+    
   }
 
   onResize(event) {
-    this.columnsBreakpoint = (event.target.innerWidth <= 600) ? 2 : 6;
+    this.columnsBreakpoint = (event.target.innerWidth <= 600) ? 2 : 3;
   }
+
 
   disableClick(e:any){
     e.preventDefault();
-}
+  }
+
+  onShotClick(item:Shot){
+    this.fullScreenShot=item;
+    this.isFullscreen=true;
+   console.log(document.getElementsByClassName("shot_item_fullscreen"));
+
+  }
+
+  onExitFullScreen(){
+    this.isFullscreen=false;
+  }
 
   scroll = (event: any): void => {
     //const number = event.srcElement.scrollTop;
    const element=event.srcElement;
     if (element.scrollHeight - element.scrollTop === element.clientHeight)
     {
-      this.getUserShots()
+    
     }
   };
 
   getUserShots(){
-    if(this.isFinishLoading){
-      this.isSubLoading=false;
-      return
-    }
-    this.STATIC_PAGE_NUM=this.STATIC_PAGE_NUM+1
-    if(this.STATIC_PAGE_NUM!=1){
-      this.isSubLoading=true;
-    }
-   
-    this.httpClient.get(this.MAIN_URL+'&page='+this.STATIC_PAGE_NUM)
-    .subscribe((res:Shot[])=>{
-      if(res.length!=0){
-        for(var i in res){
-          this.shots.push(res[i])
-        }
-        this.isSubLoading=false;
-        this.getUserShots();
-      }else{
-        this.isFinishLoading=true;
-        this.isSubLoading=false;
-      }
-      
-     this.isMainLoading=false;
-    })
+    this.shots=AppConstants.shotsresponse
+    this.isMainLoading=false;
   }
 
 
